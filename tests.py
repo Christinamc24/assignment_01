@@ -43,8 +43,9 @@ class Test_Assignment_01(unittest.TestCase):
         """
         A test that will fail.
         """
-        self.assertFalse(True, 'This should fail, please fix it.')
-
+        self.assertFalse(False, 'This should fail, please fix it.')
+      
+        
     def test_assert_equality(self):
         """
         A test for equality by assigning a value to a variable
