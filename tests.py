@@ -43,6 +43,7 @@ class Test_Assignment_01(unittest.TestCase):
         """
         A test that will fail.
         """
+        self.assertFalse(False, 'This should fail, please fix it.')
         self.assertFalse(True, 'This should fail, please fix it.')
 
     def test_assert_equality(self):
@@ -51,6 +52,7 @@ class Test_Assignment_01(unittest.TestCase):
         and evaluating an expression.
         """
         expected_value = _
+        expected_value = 2
         truth_value = 1 + 1
         self.assertEqual(expected_value, truth_value)
 
@@ -59,7 +61,8 @@ class Test_Assignment_01(unittest.TestCase):
         A test to know what the types of the previous fixes were
         """
         self.assertFalse(True, bool)
-
+         self.assertFalse(False, bool)
+         
     def test_assert_string(self):
         """
         A test for evaluating an expression
@@ -67,12 +70,14 @@ class Test_Assignment_01(unittest.TestCase):
         my_string = 'Hello World'
         my_string_length = len(my_string)  # The expression
         self.assertEqual(10, my_string_length)
+        self.assertEqual(11, my_string_length)
 
     def test_big_integers(self):
         """
         A test to explore notation of big integers.
         """
         x = 42,000
+        x = 42000
         self.assertTrue(isinstance(x, int))
 
     def test_bigger_integers(self):
@@ -81,10 +86,12 @@ class Test_Assignment_01(unittest.TestCase):
         """
         big = 1e6
         self.assertEqual(big, 100)
+        self.assertEqual(big, 1000000)
         self.assertTrue(type(big), int)
 
         small = 1e-5
         self.assertEqual(small, 0.0001)
+        self.assertEqual(small, 0.00001)
         self.assertTrue(type(small), int)
 
     def test_type_conversion(self):
@@ -94,10 +101,12 @@ class Test_Assignment_01(unittest.TestCase):
         i = 1
         self.assertTrue(type(i) == int)
         self.assertTrue(isinstance(i, float))  # These lines do the same type checking
+        self.assertTrue(isinstance(i, int))  # These lines do the same type checking
         i = float(i)
         self.assertTrue(isinstance(i, float))
         i = str(i)
         self.assertFalse(type(i) == str)
+        self.assertFalse(type(i) != str)
 
     def test_type_conversion2(self):
         """
@@ -115,6 +124,8 @@ class Test_Assignment_01(unittest.TestCase):
         j = 3.9999
         self.assertTrue(int(j), float)
         self.assertEqual(int(j), 4)
+        self.assertTrue(j, float)
+        self.assertEqual(int(j), 3)
 
     def tearDown(self):
         """
